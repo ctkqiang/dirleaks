@@ -22,13 +22,11 @@ FILE *log_fp = NULL;
 static void init_log(const char *url) {
     if (!enable_log) return;
 
-    // 创建 out/ 文件夹
     struct stat st = {0};
     if (stat("out", &st) == -1) {
         mkdir("out", 0700);
     }
 
-    // 从 url 提取域名/主机名
     char filename[512];
     const char *p = strstr(url, "://");
     const char *host = (p ? p + 3 : url);
@@ -36,7 +34,6 @@ static void init_log(const char *url) {
     strncpy(host_copy, host, sizeof(host_copy) - 1);
     host_copy[sizeof(host_copy) - 1] = 0;
 
-    // 去掉端口和路径
     char *slash = strchr(host_copy, '/');
     if (slash) *slash = 0;
 
