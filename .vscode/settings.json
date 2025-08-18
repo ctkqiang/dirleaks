@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "csharp_path.h": "c",
+        "docker_path.h": "c",
+        "generic_path.h": "c",
+        "java_path.h": "c",
+        "linux_path.h": "c",
+        "python_path.h": "c",
+        "tui.h": "c",
+        "scanner.h": "c",
+        "bitset": "cpp",
+        "unordered_map": "cpp"
+    }
+}
