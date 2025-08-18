@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/stat.h>
 
 #include "include/tui.h"
 #include "include/scanner.h"
+#include "config/globals.h"
 
 #include "include/csharp_path.h"
 #include "include/docker_path.h"
@@ -12,11 +16,49 @@
 #include "include/python_path.h"
 #include "include/windows_path.h"
 
+bool enable_log = true;
+FILE *log_fp = NULL;
+
+static void init_log(const char *url) {
+    if (!enable_log) return;
+
+    // 创建 out/ 文件夹
+    struct stat st = {0};
+    if (stat("out", &st) == -1) {
+        mkdir("out", 0700);
+    }
+
+    // 从 url 提取域名/主机名
+    char filename[512];
+    const char *p = strstr(url, "://");
+    const char *host = (p ? p + 3 : url);
+    char host_copy[256];
+    strncpy(host_copy, host, sizeof(host_copy) - 1);
+    host_copy[sizeof(host_copy) - 1] = 0;
+
+    // 去掉端口和路径
+    char *slash = strchr(host_copy, '/');
+    if (slash) *slash = 0;
+
+    snprintf(filename, sizeof(filename), "out/%s.log", host_copy);
+
+    log_fp = fopen(filename, "w");
+    if (!log_fp) {
+        perror("无法创建日志文件");
+        enable_log = false;
+    }
+}
+
+static void close_log() {
+    if (log_fp) fclose(log_fp);
+}
 
 int main() {
     char url[256];
     int choice = show_menu();
     ask_url(url, sizeof(url));
+
+    init_log(url);
 
     if (choice == 0 || choice == 1) scan_group("CSharp", csharp_paths, csharp_count, url);
     if (choice == 0 || choice == 2) scan_group("Docker", docker_paths, docker_count, url);
@@ -27,5 +69,6 @@ int main() {
     if (choice == 0 || choice == 7) scan_group("Python", python_paths, python_count, url);
     if (choice == 0 || choice == 8) scan_group("Windows", windows_paths, windows_count, url);
 
+    close_log();
     return 0;
 }

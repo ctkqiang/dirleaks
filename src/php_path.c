@@ -1,6 +1,6 @@
 #include "../include/php_path.h"
 
-const char *paths[] = {
+const char *php_paths[] = {
     "/.env",
     "/config.php",
     "/db.php",
@@ -13,4 +13,4 @@ const char *paths[] = {
     "/vendor/"
 };
 
-const int count = sizeof(paths) / sizeof(paths[0x0]);
+const int php_count = sizeof(php_paths) / sizeof(php_paths[0x0]);

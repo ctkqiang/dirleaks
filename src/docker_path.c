@@ -1,6 +1,6 @@
 #include "../include/docker_path.h"
 
-const char *paths[] = {
+const char *docker_paths[] = {
     "/Dockerfile",
     "/docker-compose.yml",
     "/.dockerignore",
@@ -8,4 +8,4 @@ const char *paths[] = {
     "/.docker/config.json"
 };
 
-const int count = sizeof(paths) / sizeof(paths[0x0]);
+const int docker_count = sizeof(docker_paths) / sizeof(docker_paths[0x0]);

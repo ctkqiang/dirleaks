@@ -1,6 +1,6 @@
 #include "../include/python_path.h"
 
-const char *paths[] = {
+const char *python_paths[] = {
     "/settings.py",
     "/local_settings.py",
     "/config.py",
@@ -10,4 +10,4 @@ const char *paths[] = {
     "/__pycache__/"
 };
 
-const int count = sizeof(paths) / sizeof(paths[0x0]);
+const int python_count = sizeof(python_paths) / sizeof(python_paths[0x0]);

@@ -1,6 +1,6 @@
 #include "../include/generic_path.h"
 
-const char *paths[] = {
+const char *generic_paths[] = {
     "/.git/",
     "/.svn/",
     "/.hg/",
@@ -13,4 +13,4 @@ const char *paths[] = {
     "/index.old"
 };
 
-const int count = sizeof(paths) / sizeof(paths[0x0]);
+const int generic_count = sizeof(generic_paths) / sizeof(generic_paths[0x0]);

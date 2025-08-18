@@ -10,6 +10,15 @@
         "tui.h": "c",
         "scanner.h": "c",
         "bitset": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "__config": "c",
+        "__split_buffer": "c",
+        "algorithm": "c",
+        "bit": "c",
+        "locale": "c",
+        "memory": "c",
+        "string": "c",
+        "vector": "c",
+        "globals.h": "c"
     }
 }

@@ -1,6 +1,6 @@
 #include "../include/java_path.h"
 
-const char *paths[] = {
+const char *java_paths[] = {
     "/WEB-INF/web.xml",
     "/WEB-INF/classes/",
     "/application.properties",
@@ -11,4 +11,4 @@ const char *paths[] = {
     "/target/"
 };
 
-const int count = sizeof(paths) / sizeof(paths[0x0]);
+const int java_count = sizeof(java_paths) / sizeof(java_paths[0x0]);
