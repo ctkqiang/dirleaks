@@ -58,6 +58,8 @@ static void close_log() {
 }
 
 int main() {
+    show_banner();
+
     char url[256];
     int choice = show_menu();
     ask_url(url, sizeof(url));
