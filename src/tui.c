@@ -30,7 +30,8 @@ int show_menu() {
     printf("6) PHP\n");
     printf("7) Python\n");
     printf("8) Windows\n");
-    printf("请选择 [0-8]: ");
+    printf("9) SQL\n");
+    printf("请选择 [0-9]: ");
     scanf("%d", &choice);
     
     getchar();

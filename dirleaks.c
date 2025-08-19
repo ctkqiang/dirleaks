@@ -15,6 +15,7 @@
 #include "include/php_path.h"
 #include "include/python_path.h"
 #include "include/windows_path.h"
+#include "include/sql_path.h"
 
 bool enable_log = true;
 FILE *log_fp = NULL;
@@ -65,6 +66,8 @@ int main() {
     if (choice == 0 || choice == 6) scan_group("PHP", php_paths, php_count, url);
     if (choice == 0 || choice == 7) scan_group("Python", python_paths, python_count, url);
     if (choice == 0 || choice == 8) scan_group("Windows", windows_paths, windows_count, url);
+    if (choice == 0 || choice == 9) scan_group("SQL", sql_paths, sql_count, url);
+
 
     close_log();
     return 0;
