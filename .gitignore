@@ -1,0 +1,7 @@
+out/
+dirleaks
+
+*.out
+*.o
+*.exe
+*.bin

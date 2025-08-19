@@ -10,7 +10,12 @@ const char *linux_paths[] = {
     "/etc/nginx/nginx.conf",
     "/etc/apache2/apache2.conf",
     "/var/www/html/",
-    "/tmp/"
+    "/tmp/",
+    "/.bash_history",
+    "/root/",
+    "/home/",
+    "/proc/self/environ",
+    "/var/log/"
 };
 
-const int linux_count = sizeof(linux_paths) / sizeof(linux_paths[0x0]);
+const int linux_count = sizeof(linux_paths) / sizeof(linux_paths[0]);

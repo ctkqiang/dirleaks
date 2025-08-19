@@ -31,7 +31,15 @@ int show_menu() {
     printf("7) Python\n");
     printf("8) Windows\n");
     printf("9) SQL\n");
-    printf("请选择 [0-9]: ");
+    printf("10) C++\n");
+    printf("11) Delphi\n");
+    printf("12) Go\n");
+    printf("13) Ruby\n");
+    printf("14) Erlang & Elixir\n");
+    printf("15) Wordpress\n");
+
+    printf("请选择 [0-15]: ");
+    
     scanf("%d", &choice);
     
     getchar();

@@ -16,6 +16,12 @@
 #include "include/python_path.h"
 #include "include/windows_path.h"
 #include "include/sql_path.h"
+#include "include/delphi_path.h"
+#include "include/cpp_path.h"
+#include "include/go_path.h"
+#include "include/ruby_path.h"
+#include "include/erlang_path.h"
+#include "include/wordpress_path.h"
 
 bool enable_log = true;
 FILE *log_fp = NULL;
@@ -67,7 +73,12 @@ int main() {
     if (choice == 0 || choice == 7) scan_group("Python", python_paths, python_count, url);
     if (choice == 0 || choice == 8) scan_group("Windows", windows_paths, windows_count, url);
     if (choice == 0 || choice == 9) scan_group("SQL", sql_paths, sql_count, url);
-
+    if (choice == 0 || choice == 10) scan_group("C/C++", cpp_paths, cpp_count, url);
+    if (choice == 0 || choice == 11) scan_group("Delphi", delphi_paths, delphi_count, url);
+    if (choice == 0 || choice == 12) scan_group("Go", go_paths, go_count, url);
+    if (choice == 0 || choice == 13) scan_group("Ruby", ruby_paths, ruby_count, url);
+    if (choice == 0 || choice == 14) scan_group("Erlang & Elixir", erlang_paths, erlang_count, url);
+    if (choice == 0 || choice == 14) scan_group("Wordpress", wordpress_paths,wordpress_count, url);
 
     close_log();
     return 0;

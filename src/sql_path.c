@@ -1,10 +1,10 @@
 #include "../include/sql_path.h"
 
 const char *sql_paths[] = {
-    "/sql"
-    "/sql.php"
-    "/sql/index.php"
-    ".sql"
+    "/sql",
+    "/sql.php",
+    "/sql/index.php",
+    ".sql",
     ".sql.php"
 };
 
