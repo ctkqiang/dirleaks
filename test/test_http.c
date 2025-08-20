@@ -17,7 +17,6 @@ CURLcode __wrap_curl_easy_perform(CURL *curl) {
     return (CURLcode)mock();
 }
 
-// Mock for curl_easy_getinfo
 CURLcode __wrap_curl_easy_getinfo(CURL *curl, CURLINFO info, ...) {
     va_list args;
     va_start(args, info);
