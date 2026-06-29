@@ -6,7 +6,6 @@
 
 #include "../config/globals.h"
 
-
 static void log_print(const char *fmt, ...) {
     va_list args;
 
